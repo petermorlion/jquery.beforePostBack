@@ -18,6 +18,5 @@
 	},
 	"description" : "This jQuery plugin allows you to subscribe to ASP.NET's postback. Because ASP.NET (WebForms) doesn't raise a submit event, we need another way of subscribing to the postback. This plugin allows you to execute javascript functions before the form is posted to the server.",
 	"keywords" : [ "asp.net", "postback" ],
-	"homepage" : "URL TO GITHUB",
-	"docs" : "URL TO DOC"
+	"homepage" : "http://github.com/petermorlion/jquery.beforePostBack"
 }
