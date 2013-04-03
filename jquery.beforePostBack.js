@@ -9,12 +9,7 @@
 
     $.beforePostBack = function (func) {
         $('form').on('beforePostBack', function () {
-            var result = func();
-            if (result === undefined) {
-                result = true;
-            }
-            
-            return result;
+            func();
         });
     };
 })(jQuery);
