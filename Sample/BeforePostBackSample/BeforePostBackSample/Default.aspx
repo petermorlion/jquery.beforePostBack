@@ -14,9 +14,6 @@
             <asp:LinkButton runat="server" ID="linkButtonPostBack" Text="PostBack" OnClick="LinkButtonPostBackOnClick"></asp:LinkButton>
         </div>
         <div>
-            <asp:CheckBox runat="server" ID="checkBoxPreventPostBack" /> Prevent postback.
-        </div>
-        <div>
             You've posted back <asp:Label runat="server" ID="labelPostBackCount"></asp:Label> times.<br/>
             You've submitted <asp:Label runat="server" ID="labelSubmitCount"></asp:Label> times.
         </div>
@@ -29,14 +26,6 @@
 
             $.beforePostBack(function () {
                 alert('Going to post back!');
-            });
-            
-            $.beforePostBack(function () {
-                if ($('[id$=checkBoxPreventPostBack]').is(':checked')) {
-                    return false;
-                }
-
-                return true;
             });
         });
     </script>
