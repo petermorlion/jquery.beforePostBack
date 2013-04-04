@@ -1,6 +1,6 @@
 {
 	"name" : "beforePostBack", 
-	"version" : "1.0.0", 
+	"version" : "1.0.1", 
 	"title" : "A jQuery plugin to add event handlers to ASP.NET's postback.", 
 	"author" : {
 		"name" : "Peter Morlion",
