@@ -1,3 +1,9 @@
+/*
+ * Copyright (c) 2013 Peter Morlion
+ * Licensed under the MIT license.
+ * http://petermorlion.blogspot.com
+ */
+
 (function ($) {
     if (typeof __doPostBack === 'function') {
         var old__doPostBack = __doPostBack;
