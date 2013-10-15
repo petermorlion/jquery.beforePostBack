@@ -1,12 +1,16 @@
 jquery.beforePostBack is a jQuery plugin to subscribe to the postback of an ASP.NET page. 
 
-ASP.NET won't always raise a 'submit' event (for example with LinkButtons), meaning you can't hook into it. This plugin creates a 'beforePostBack' event and raises it just before the actual post to the server occurs.
+ASP.NET won't always raise a 'submit' event (for example with LinkButtons), meaning you can't hook into it. This plugin allows you to execute javascript before the postback happens and optionally stop it. Returning false will stop the postback. Anything else will let the postback continue.
 
 Usage is easy:
 
 ```javascript
     $.beforePostBack(function () {
-		alert('Going to post back!');
+		if (dontPostback) {
+			return false;
+		} else {
+			alert('Going to post back!');
+		}
 	});
 ```
 	
