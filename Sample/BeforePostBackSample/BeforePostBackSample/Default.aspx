@@ -12,6 +12,8 @@
         <div>
             <asp:Button runat="server" id="buttonPostBack" Text="Submit" OnClick="OnButtonPostBackClick"/>
             <asp:LinkButton runat="server" ID="linkButtonPostBack" Text="PostBack" OnClick="LinkButtonPostBackOnClick"></asp:LinkButton>
+            
+            <input id="stopPostBackCheckbox" type="checkbox"/><label for="stopPostBackCheckbox">Stop postback</label>
         </div>
         <div>
             You've posted back <asp:Label runat="server" ID="labelPostBackCount"></asp:Label> times.<br/>
@@ -25,7 +27,11 @@
             $('form').submit(function() { alert('Submitting'); });
 
             $.beforePostBack(function () {
-                alert('Going to post back!');
+                if ($('#stopPostBackCheckbox').is(':checked')) {
+                    return false;
+                } else {
+                    alert('Going to post back!');
+                }
             });
         });
     </script>

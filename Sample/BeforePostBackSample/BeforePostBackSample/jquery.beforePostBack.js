@@ -1,15 +1,14 @@
 (function ($) {
-    if (typeof __doPostBack === 'function') {
+    $.beforePostBack = function (func) {
+        if (typeof func !== 'function') {
+            return;
+        }
+
         var old__doPostBack = __doPostBack;
         __doPostBack = function (eventTarget, eventArgument) {
-            $('form').trigger('beforePostBack');
-            old__doPostBack(eventTarget, eventArgument);
+            if (func() != false) {
+                old__doPostBack(eventTarget, eventArgument);
+            }
         };
-    }
-
-    $.beforePostBack = function (func) {
-        $('form').on('beforePostBack', function (e) {
-            func();
-        });
     };
 })(jQuery);
